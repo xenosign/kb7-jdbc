@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserService {
+
     private final UserRepository userRepository = new UserRepository();
 
     // 1. 회원 목록 조회
@@ -29,6 +30,11 @@ public class UserService {
             }
         }
         return result;
+    }
+
+    // 3-2. 이름 LIKE 검색 (DB)
+    public List<User> searchByNameLike(String name) {
+        return userRepository.findByNameLike(name);
     }
 
     // 4. 회원 삭제

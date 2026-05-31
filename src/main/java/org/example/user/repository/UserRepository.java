@@ -128,6 +128,34 @@ public class UserRepository {
         return 0;
     }
 
+    // 이름 LIKE 검색
+    public List<User> findByNameLike(String name) {
+        String sql = "SELECT * FROM `user` WHERE name LIKE ?";
+        List<User> users = new ArrayList<>();
+
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, "%" + name + "%");
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    User user = new User();
+                    user.setId(rs.getInt("id"));
+                    user.setUserId(rs.getString("user_id"));
+                    user.setName(rs.getString("name"));
+                    user.setPassword(rs.getString("password"));
+                    user.setCreateAt(rs.getTimestamp("create_at") != null
+                            ? rs.getTimestamp("create_at").toLocalDateTime()
+                            : null);
+                    users.add(user);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return users;
+    }
+
     // 삭제
     public int deleteById(int id) {
         String sql = "DELETE FROM `user` WHERE id = ?";

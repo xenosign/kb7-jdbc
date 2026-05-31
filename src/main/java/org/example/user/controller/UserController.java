@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UserController {
+    // 1. REPO 를 stmt 에서 pstmt 로 수정해서 레이어 분리 보여주기
+    // 2. 이름 검색을 어플리케이션 레벨에서 -> Repo 로 수정 보여주기
 
     public static void main(String[] args) {
         UserService userService = new UserService();
@@ -53,7 +55,7 @@ public class UserController {
                 System.out.print("검색할 이름: ");
                 String name = scanner.nextLine();
 
-                List<User> result = userService.searchByName(name);
+                List<User> result = userService.searchByNameLike(name);
                 for (User user : result) {
                     System.out.println(user.toString());
                 }
