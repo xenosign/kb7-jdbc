@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserService {
-
     private final UserRepository userRepository = new UserRepository();
 
     // 1. 회원 목록 조회
