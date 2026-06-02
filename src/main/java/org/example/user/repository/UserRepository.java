@@ -24,7 +24,7 @@ public class UserRepository {
                 user.setUserId(rs.getString("user_id"));
                 user.setName(rs.getString("name"));
                 user.setPassword(rs.getString("password"));
-                user.setCreateAt(rs.getTimestamp("create_at").toLocalDateTime());
+                user.setCreateAt(rs.getTimestamp("created_at").toLocalDateTime());
                 users.add(user);
             }
 
@@ -49,9 +49,7 @@ public class UserRepository {
                     user.setUserId(rs.getString("user_id"));
                     user.setName(rs.getString("name"));
                     user.setPassword(rs.getString("password"));
-                    user.setCreateAt(rs.getTimestamp("create_at") != null
-                            ? rs.getTimestamp("create_at").toLocalDateTime()
-                            : null);
+                    user.setCreateAt(rs.getTimestamp("created_at").toLocalDateTime());
                     return Optional.of(user);
                 }
             }
@@ -66,7 +64,7 @@ public class UserRepository {
         String sql = "SELECT * FROM `user` WHERE user_id = ?";
 
         try (Connection conn = JDBCUtil.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             PreparedStatement pstmt = conn.prepareStatement( sql)) {
 
             pstmt.setString(1, userId);
             try (ResultSet rs = pstmt.executeQuery()) {
@@ -76,9 +74,7 @@ public class UserRepository {
                     user.setUserId(rs.getString("user_id"));
                     user.setName(rs.getString("name"));
                     user.setPassword(rs.getString("password"));
-                    user.setCreateAt(rs.getTimestamp("create_at") != null
-                            ? rs.getTimestamp("create_at").toLocalDateTime()
-                            : null);
+                    user.setCreateAt(rs.getTimestamp("created_at").toLocalDateTime());
                     return Optional.of(user);
                 }
             }
@@ -118,11 +114,12 @@ public class UserRepository {
         String sql = "INSERT INTO `user` (user_id, name, password) VALUES (?, ?, ?)";
 
         try (Connection conn = JDBCUtil.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, user.getUserId());
             pstmt.setString(2, user.getName());
             pstmt.setString(3, user.getPassword());
+
             int affectedRow = pstmt.executeUpdate();
 
             if (affectedRow > 0) {
@@ -140,14 +137,15 @@ public class UserRepository {
 
     // 수정
     public int update(User user) {
-        String sql = "UPDATE `user` SET name = ?, password = ? WHERE id = ?";
+        String sql = "UPDATE `user` SET user_id = ?, name = ?, password = ? WHERE id = ?";
 
         try (Connection conn = JDBCUtil.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-            pstmt.setString(1, user.getName());
-            pstmt.setString(2, user.getPassword());
-            pstmt.setInt(3, user.getId());
+            pstmt.setString(1, user.getUserId());
+            pstmt.setString(2, user.getName());
+            pstmt.setString(3, user.getPassword());
+            pstmt.setInt(4, user.getId());
             return pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -171,9 +169,7 @@ public class UserRepository {
                     user.setUserId(rs.getString("user_id"));
                     user.setName(rs.getString("name"));
                     user.setPassword(rs.getString("password"));
-                    user.setCreateAt(rs.getTimestamp("create_at") != null
-                            ? rs.getTimestamp("create_at").toLocalDateTime()
-                            : null);
+                    user.setCreateAt(rs.getTimestamp("created_at").toLocalDateTime());
                     users.add(user);
                 }
             }

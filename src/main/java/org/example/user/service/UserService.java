@@ -1,21 +1,49 @@
 package org.example.user.service;
 
+import org.example.user.dto.UserCreateRequest;
+import org.example.user.dto.UserResponse;
 import org.example.user.entity.User;
 import org.example.user.repository.UserRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class UserService {
     private final UserRepository userRepository = new UserRepository();
 
     // 1. 회원 목록 조회
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
+    public List<UserResponse> getAllUsers() {
+        List<User> users = userRepository.findAll();
+        List<UserResponse> result = new ArrayList<>();
+
+        for (User user : users) {
+            UserResponse dto = new UserResponse();
+            dto.setId(user.getId());
+            dto.setUserId(user.getUserId());
+            dto.setName(user.getName());
+            dto.setCreateAt(user.getCreateAt());
+            result.add(dto);
+        }
+
+        return result;
+    }
+
+    // 1. 회원 목록 조회
+    public List<UserResponse> getAllUsersLambda() {
+        return userRepository.findAll().stream()
+                .map(user -> new UserResponse(user.getId(), user.getUserId(), user.getName(), user.getCreateAt()))
+                .collect(Collectors.toList());
     }
 
     // 2. 회원 추가
-    public int addUser(User user) {
+    public int addUser(UserCreateRequest request) {
+        // DTO 를 Entity 로 변환하여 전달!
+        User user = new User();
+        user.setUserId(request.getUserId());
+        user.setName(request.getName());
+        user.setPassword(request.getPassword());
+
         return userRepository.save(user);
     }
 
@@ -30,6 +58,12 @@ public class UserService {
         }
         return result;
     }
+
+//    public List<User> searchByName(String name) {
+//        return userRepository.findAll().stream()
+//                .filter(user -> user.getName().contains(name))
+//                .collect(Collectors.toList());
+//    }
 
     // 3-2. 이름 LIKE 검색 (DB)
     public List<User> searchByNameLike(String name) {
