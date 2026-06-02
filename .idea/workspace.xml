@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25805971-96b9-4723-8458-0dba155590ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/user/dto/UserCreateRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/dto/UserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/JDBCUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/JDBCUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/service/UserService2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/service/UserService2.java" afterDir="false" />
@@ -139,7 +137,7 @@
       <workItem from="1780141098375" duration="9000" />
       <workItem from="1780226506481" duration="3975000" />
       <workItem from="1780272795942" duration="19453000" />
-      <workItem from="1780359187874" duration="7970000" />
+      <workItem from="1780359187874" duration="15700000" />
     </task>
     <servers />
   </component>

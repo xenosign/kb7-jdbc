@@ -9,13 +9,18 @@ import java.util.List;
 import java.util.Optional;
 
 public class UserRepository {
+    Connection conn;
+
+    public UserRepository(Connection conn) {
+        this.conn = conn;
+    }
+
     // 전체 조회
     public List<User> findAll() {
         String sql = "SELECT * FROM `user`";
         List<User> users = new ArrayList<>();
 
-        try (Connection conn = JDBCUtil.getConnection();
-             Statement stmt = conn.createStatement();
+        try (Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
@@ -38,8 +43,7 @@ public class UserRepository {
     public Optional<User> findById(int id) {
         String sql = "SELECT * FROM `user` WHERE id = ?";
 
-        try (Connection conn = JDBCUtil.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setInt(1, id);
             try (ResultSet rs = pstmt.executeQuery()) {
@@ -63,8 +67,7 @@ public class UserRepository {
     public Optional<User> findByUserId(String userId) {
         String sql = "SELECT * FROM `user` WHERE user_id = ?";
 
-        try (Connection conn = JDBCUtil.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement( sql)) {
+        try (PreparedStatement pstmt = conn.prepareStatement( sql)) {
 
             pstmt.setString(1, userId);
             try (ResultSet rs = pstmt.executeQuery()) {
@@ -113,8 +116,7 @@ public class UserRepository {
     public int save(User user) {
         String sql = "INSERT INTO `user` (user_id, name, password) VALUES (?, ?, ?)";
 
-        try (Connection conn = JDBCUtil.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, user.getUserId());
             pstmt.setString(2, user.getName());
@@ -139,8 +141,7 @@ public class UserRepository {
     public int update(User user) {
         String sql = "UPDATE `user` SET user_id = ?, name = ?, password = ? WHERE id = ?";
 
-        try (Connection conn = JDBCUtil.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, user.getUserId());
             pstmt.setString(2, user.getName());
@@ -158,8 +159,7 @@ public class UserRepository {
         String sql = "SELECT * FROM `user` WHERE name LIKE ?";
         List<User> users = new ArrayList<>();
 
-        try (Connection conn = JDBCUtil.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, "%" + name + "%");
             try (ResultSet rs = pstmt.executeQuery()) {
@@ -183,8 +183,7 @@ public class UserRepository {
     public int deleteById(int id) {
         String sql = "DELETE FROM `user` WHERE id = ?";
 
-        try (Connection conn = JDBCUtil.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setInt(1, id);
             return pstmt.executeUpdate();

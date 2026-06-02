@@ -1,5 +1,6 @@
 package org.example.user.service;
 
+import org.example.config.JDBCUtil;
 import org.example.user.dto.UserCreateRequest;
 import org.example.user.dto.UserResponse;
 import org.example.user.entity.User;
@@ -10,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class UserService {
-    private final UserRepository userRepository = new UserRepository();
+    private final UserRepository userRepository = new UserRepository(JDBCUtil.getConnection());
 
     // 1. 회원 목록 조회
     public List<UserResponse> getAllUsers() {

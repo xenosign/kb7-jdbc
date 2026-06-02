@@ -1,5 +1,6 @@
 package org.example.user.service;
 
+import org.example.config.JDBCUtil;
 import org.example.user.dto.UserResponse;
 import org.example.user.entity.User;
 import org.example.user.repository.UserRepository;
@@ -9,7 +10,7 @@ import java.util.List;
 
 public class UserService2 {
 
-    private final UserRepository userRepository = new UserRepository();
+    private final UserRepository userRepository = new UserRepository(JDBCUtil.getConnection());
 
     // User -> UserDto 변환
     private UserResponse toDto(User user) {
