@@ -4,6 +4,7 @@ import org.example.config.JDBCUtil;
 import org.example.user.dto.UserCreateRequest;
 import org.example.user.dto.UserResponse;
 import org.example.user.entity.User;
+import org.example.user.repository.UserMybatisRepository;
 import org.example.user.repository.UserRepository;
 
 import java.util.ArrayList;
@@ -12,10 +13,12 @@ import java.util.stream.Collectors;
 
 public class UserService {
     private final UserRepository userRepository = new UserRepository(JDBCUtil.getConnection());
+    private final UserMybatisRepository userMybatisRepository = new UserMybatisRepository();
 
     // 1. 회원 목록 조회
     public List<UserResponse> getAllUsers() {
-        List<User> users = userRepository.findAll();
+//        List<User> users = userRepository.findAll();
+        List<User> users = userMybatisRepository.findAll();
         List<UserResponse> result = new ArrayList<>();
 
         for (User user : users) {
