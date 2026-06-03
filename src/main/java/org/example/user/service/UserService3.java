@@ -11,13 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class UserService {
+public class UserService2 {
     private final UserRepository userRepository = new UserRepository(JDBCUtil.getConnection());
     private final UserMybatisRepository userMybatisRepository = new UserMybatisRepository();
 
     // 1. 회원 목록 조회
     public List<UserResponse> getAllUsers() {
-        List<User> users = userRepository.findAll();
+//        List<User> users = userRepository.findAll();
+        List<User> users = userMybatisRepository.findAll();
         List<UserResponse> result = new ArrayList<>();
 
         for (User user : users) {
