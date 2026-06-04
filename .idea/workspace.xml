@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25805971-96b9-4723-8458-0dba155590ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/user/controller/UserMybatisController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/user/service/UserMyBatisService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/repository/UserMybatisRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/repository/UserMybatisRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/service/UserService2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/service/UserService22.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/service/UserService3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/service/UserService33.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +17,23 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="kb7-jdbc" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -48,10 +58,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.Download Sources.executor": "Run",
     "Gradle.kb7-jdbc [:org.example.Main.main()].executor": "Run",
     "Gradle.kb7-jdbc [:org.example.user.UserMain.main()].executor": "Run",
     "Gradle.kb7-jdbc [:org.example.user.UserMain2.main()].executor": "Run",
     "Gradle.kb7-jdbc [:org.example.user.controller.UserController.main()].executor": "Run",
+    "Gradle.kb7-jdbc [:org.example.user.controller.UserMongoController.main()].executor": "Run",
     "Gradle.kb7-jdbc [:org.example.user.controller.UserMybatisController.main()].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -78,7 +90,7 @@
       <recent name="org.example.user.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.UserMybatisController">
+  <component name="RunManager" selected="Application.UserMongoController">
     <configuration name="UserController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.user.controller.UserController" />
       <module name="kb7-jdbc.main" />
@@ -118,6 +130,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserMongoController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.user.controller.UserMongoController" />
+      <module name="kb7-jdbc.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.user.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserMybatisController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.user.controller.UserMybatisController" />
       <module name="kb7-jdbc.main" />
@@ -133,6 +158,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UserMongoController" />
         <item itemvalue="Application.UserMybatisController" />
         <item itemvalue="Application.UserMain" />
         <item itemvalue="Application.UserController" />
@@ -163,7 +189,7 @@
       <workItem from="1780389544827" duration="30000" />
       <workItem from="1780497053022" duration="9000" />
       <workItem from="1780497348746" duration="72000" />
-      <workItem from="1780532092816" duration="9353000" />
+      <workItem from="1780532092816" duration="15136000" />
     </task>
     <servers />
   </component>
