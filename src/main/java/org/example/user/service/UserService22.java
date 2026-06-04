@@ -8,7 +8,7 @@ import org.example.user.repository.UserRepository;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserService2 {
+public class UserService22 {
 
     private final UserRepository userRepository = new UserRepository(JDBCUtil.getConnection());
 

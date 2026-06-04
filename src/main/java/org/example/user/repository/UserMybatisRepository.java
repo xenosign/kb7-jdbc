@@ -14,27 +14,33 @@ public class UserMybatisRepository {
     // 전체 조회
     public List<User> findAll() {
         try (SqlSession session = MyBatisConfig.getSqlSession()) {
-            return session.selectList(NAMESPACE + "findAll");
+            UserMapper mapper = session.getMapper(UserMapper.class);
+            return mapper.findAll();
+        }
+    }
+
+    // 전체 조회
+    public List<User> findAll2() {
+        try (SqlSession session = MyBatisConfig.getSqlSession()) {
+          return session.selectList(NAMESPACE + "findAll");
+        }
+    }
+
+//    // id(PK)로 단건 조회
+//    public Optional<User> findById(int id) {
+//        try (SqlSession session = MyBatisConfig.getSqlSession()) {
 //            UserMapper mapper = session.getMapper(UserMapper.class);
-//            return mapper.findAll();
-        }
-    }
-
-    // id(PK)로 단건 조회
-    public Optional<User> findById(int id) {
-        try (SqlSession session = MyBatisConfig.getSqlSession()) {
-            UserMapper mapper = session.getMapper(UserMapper.class);
-            return Optional.ofNullable(mapper.findById(id));
-        }
-    }
-
-    // user_id(로그인 ID)로 단건 조회
-    public Optional<User> findByUserId(String userId) {
-        try (SqlSession session = MyBatisConfig.getSqlSession()) {
-            UserMapper mapper = session.getMapper(UserMapper.class);
-            return Optional.ofNullable(mapper.findByUserId(userId));
-        }
-    }
+//            return Optional.ofNullable(mapper.findById(id));
+//        }
+//    }
+//
+//    // user_id(로그인 ID)로 단건 조회
+//    public Optional<User> findByUserId(String userId) {
+//        try (SqlSession session = MyBatisConfig.getSqlSession()) {
+//            UserMapper mapper = session.getMapper(UserMapper.class);
+//            return Optional.ofNullable(mapper.findByUserId(userId));
+//        }
+//    }
 
     // 이름 LIKE 검색
     public List<User> findByNameLike(String name) {
@@ -47,9 +53,11 @@ public class UserMybatisRepository {
     // 등록
     public int save(User user) {
         try (SqlSession session = MyBatisConfig.getSqlSession()) {
+            System.out.println("추가 할 회원 Entity 는? : " + user);
             UserMapper mapper = session.getMapper(UserMapper.class);
             int result = mapper.save(user);
             session.commit();
+            System.out.println("추가 된 회원 Entity 는? : " + user);
             return result;
         }
     }

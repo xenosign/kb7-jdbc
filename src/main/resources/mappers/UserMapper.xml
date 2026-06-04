@@ -16,16 +16,6 @@
         SELECT * FROM `user`
     </select>
 
-    <!-- id(PK)로 단건 조회 -->
-    <select id="findById" parameterType="int" resultMap="userResultMap">
-        SELECT * FROM `user` WHERE id = #{id}
-    </select>
-
-    <!-- user_id(로그인 ID)로 단건 조회 -->
-    <select id="findByUserId" parameterType="String" resultMap="userResultMap">
-        SELECT * FROM `user` WHERE user_id = #{userId}
-    </select>
-
     <!-- 이름 LIKE 검색 -->
     <select id="findByNameLike" parameterType="String" resultMap="userResultMap">
         SELECT * FROM `user` WHERE name LIKE #{name}
@@ -46,4 +36,13 @@
         DELETE FROM `user` WHERE id = #{id}
     </delete>
 
+    <!-- id(PK)로 단건 조회 -->
+    <select id="findById" parameterType="int" resultMap="userResultMap">
+        SELECT * FROM `user` WHERE id = #{id}
+    </select>
+
+    <!-- user_id(로그인 ID)로 단건 조회 -->
+    <select id="findByUserId" parameterType="String" resultMap="userResultMap">
+        SELECT * FROM `user` WHERE user_id = #{userId}
+    </select>
 </mapper>
