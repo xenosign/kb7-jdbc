@@ -4,13 +4,14 @@ import org.example.user.dto.UserCreateRequest;
 import org.example.user.dto.UserResponse;
 import org.example.user.entity.User;
 import org.example.user.service.UserService;
+import org.example.user.service.UserService3;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class UserController {
     public static void main(String[] args) {
-        UserService userService = new UserService();
+        UserService3 userService = new UserService3();
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
