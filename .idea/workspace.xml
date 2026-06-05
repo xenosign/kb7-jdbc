@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="25805971-96b9-4723-8458-0dba155590ec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/MongoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/MongoConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/controller/UserMongoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/controller/UserMongoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/repository/UserMongoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/repository/UserMongoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/service/UserMongoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/service/UserMongoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/entity/UserPojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/entity/UserPojo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/repository/UserMongoPojoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/repository/UserMongoPojoRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,11 +195,23 @@
       <workItem from="1780618343897" duration="10202000" />
       <workItem from="1780632681845" duration="75000" />
       <workItem from="1780632992755" duration="98000" />
-      <workItem from="1780633211494" duration="1419000" />
+      <workItem from="1780633211494" duration="2739000" />
+      <workItem from="1780638291549" duration="2872000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/user/repository/UserMongoRepository.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

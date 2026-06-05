@@ -28,55 +28,55 @@ public class UserMongoPojoRepository {
         }
     }
 
-    // id(PK)로 단건 조회
-    public Optional<User> findById(int id) {
-        UserPojo pojo = collection.find(Filters.eq("_id", id)).first();
-        return pojo != null ? Optional.of(pojo.toUser()) : Optional.empty();
-    }
-
-    // user_id(로그인 ID)로 단건 조회
-    public Optional<User> findByUserId(String userId) {
-        UserPojo pojo = collection.find(Filters.eq("user_id", userId)).first();
-        return pojo != null ? Optional.of(pojo.toUser()) : Optional.empty();
-    }
-
-    // 등록 - User -> UserPojo 변환 후 insertOne
-    public int save(User user) {
-        try {
-            collection.insertOne(UserPojo.from(user));
-            System.out.println("사용자 추가 성공");
-            return 1;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return -1;
-        }
-    }
-
-    // 수정
-    public int update(User user) {
-        var result = collection.updateOne(
-                Filters.eq("_id", user.getId()),
-                Updates.combine(
-                        Updates.set("user_id", user.getUserId()),
-                        Updates.set("name", user.getName()),
-                        Updates.set("password", user.getPassword())
-                )
-        );
-        return (int) result.getModifiedCount();
-    }
-
-    // 이름 LIKE 검색
-    public List<User> findByNameLike(String name) {
-        List<User> users = new ArrayList<>();
-        for (UserPojo pojo : collection.find(Filters.regex("name", name))) {
-            users.add(pojo.toUser());
-        }
-        return users;
-    }
-
-    // 삭제
-    public int deleteById(int id) {
-        var result = collection.deleteOne(Filters.eq("_id", id));
-        return (int) result.getDeletedCount();
-    }
+//    // id(PK)로 단건 조회
+//    public Optional<User> findById(int id) {
+//        UserPojo pojo = collection.find(Filters.eq("_id", id)).first();
+//        return pojo != null ? Optional.of(pojo.toUser()) : Optional.empty();
+//    }
+//
+//    // user_id(로그인 ID)로 단건 조회
+//    public Optional<User> findByUserId(String userId) {
+//        UserPojo pojo = collection.find(Filters.eq("user_id", userId)).first();
+//        return pojo != null ? Optional.of(pojo.toUser()) : Optional.empty();
+//    }
+//
+//    // 등록 - User -> UserPojo 변환 후 insertOne
+//    public int save(User user) {
+//        try {
+//            collection.insertOne(UserPojo.from(user));
+//            System.out.println("사용자 추가 성공");
+//            return 1;
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return -1;
+//        }
+//    }
+//
+//    // 수정
+//    public int update(User user) {
+//        var result = collection.updateOne(
+//                Filters.eq("_id", user.getId()),
+//                Updates.combine(
+//                        Updates.set("user_id", user.getUserId()),
+//                        Updates.set("name", user.getName()),
+//                        Updates.set("password", user.getPassword())
+//                )
+//        );
+//        return (int) result.getModifiedCount();
+//    }
+//
+//    // 이름 LIKE 검색
+//    public List<User> findByNameLike(String name) {
+//        List<User> users = new ArrayList<>();
+//        for (UserPojo pojo : collection.find(Filters.regex("name", name))) {
+//            users.add(pojo.toUser());
+//        }
+//        return users;
+//    }
+//
+//    // 삭제
+//    public int deleteById(int id) {
+//        var result = collection.deleteOne(Filters.eq("_id", id));
+//        return (int) result.getDeletedCount();
+//    }
 }

@@ -12,7 +12,7 @@ import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
 public class MongoConfig {
     private static final String URI = "mongodb://localhost:27017";
-    private static final String DB_NAME = "kb7-jdbc";
+    private static final String DB_NAME = "kb7-kdbc";
 
     private static MongoClient client;
 

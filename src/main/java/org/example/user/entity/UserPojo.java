@@ -23,29 +23,29 @@ public class UserPojo {
     @BsonProperty("created_at")
     private Date createdAt;
 
-    // User 엔티티로 변환
-    public User toUser() {
-        User user = new User();
-        user.setId(this.id);
-        user.setUserId(this.userId);
-        user.setName(this.name);
-        user.setPassword(this.password);
-        if (this.createdAt != null) {
-            user.setCreateAt(this.createdAt.toInstant()
-                    .atZone(java.time.ZoneId.systemDefault())
-                    .toLocalDateTime());
-        }
-        return user;
-    }
-
-    // User 엔티티로부터 생성
-    public static UserPojo from(User user) {
-        return new UserPojo(
-                user.getId(),
-                user.getUserId(),
-                user.getName(),
-                user.getPassword(),
-                new Date()
-        );
-    }
+//    // User 엔티티로 변환
+//    public User toUser() {
+//        User user = new User();
+//        user.setId(this.id);
+//        user.setUserId(this.userId);
+//        user.setName(this.name);
+//        user.setPassword(this.password);
+//        if (this.createdAt != null) {
+//            user.setCreateAt(this.createdAt.toInstant()
+//                    .atZone(java.time.ZoneId.systemDefault())
+//                    .toLocalDateTime());
+//        }
+//        return user;
+//    }
+//
+//    // User 엔티티로부터 생성
+//    public static UserPojo from(User user) {
+//        return new UserPojo(
+//                user.getId(),
+//                user.getUserId(),
+//                user.getName(),
+//                user.getPassword(),
+//                new Date()
+//        );
+//    }
 }
