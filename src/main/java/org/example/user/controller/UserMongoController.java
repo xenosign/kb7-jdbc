@@ -4,13 +4,15 @@ import org.example.user.dto.UserCreateRequest;
 import org.example.user.dto.UserResponse;
 import org.example.user.entity.User;
 import org.example.user.service.UserMongoService;
+import org.example.user.service.UserService;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class UserMongoController {
     public static void main(String[] args) {
-        UserMongoService userService = new UserMongoService();
+        UserService userService = new UserService();
+        UserMongoService userMongoService = new UserMongoService();
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -27,7 +29,7 @@ public class UserMongoController {
 
             if (choice == 1) {
                 // 1. 회원 목록 조회
-                List<UserResponse> users = userService.getAllUsers();
+                List<UserResponse> users = userMongoService.getAllUsers();
                 for (UserResponse user : users) {
                     System.out.println(user.toString());
                 }

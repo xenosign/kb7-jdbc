@@ -7,6 +7,10 @@
     <list default="true" id="25805971-96b9-4723-8458-0dba155590ec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/MongoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/MongoConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/controller/UserMongoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/controller/UserMongoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/repository/UserMongoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/repository/UserMongoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/service/UserMongoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/service/UserMongoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,32 +60,32 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.kb7-jdbc [:org.example.Main.main()].executor": "Run",
-    "Gradle.kb7-jdbc [:org.example.user.UserMain.main()].executor": "Run",
-    "Gradle.kb7-jdbc [:org.example.user.UserMain2.main()].executor": "Run",
-    "Gradle.kb7-jdbc [:org.example.user.controller.UserController.main()].executor": "Run",
-    "Gradle.kb7-jdbc [:org.example.user.controller.UserMongoController.main()].executor": "Run",
-    "Gradle.kb7-jdbc [:org.example.user.controller.UserMybatisController.main()].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "D:/git/kb7-jdbc/src/main/java/org/example/Main.java",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.kb7-jdbc [:org.example.Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.kb7-jdbc [:org.example.user.UserMain.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.kb7-jdbc [:org.example.user.UserMain2.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.kb7-jdbc [:org.example.user.controller.UserController.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.kb7-jdbc [:org.example.user.controller.UserMongoController.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.kb7-jdbc [:org.example.user.controller.UserMybatisController.main()].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;D:/git/kb7-jdbc/src/main/java/org/example/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.example.user.controller" />
@@ -190,6 +194,10 @@
       <workItem from="1780497053022" duration="9000" />
       <workItem from="1780497348746" duration="72000" />
       <workItem from="1780532092816" duration="15136000" />
+      <workItem from="1780618343897" duration="10202000" />
+      <workItem from="1780632681845" duration="75000" />
+      <workItem from="1780632992755" duration="98000" />
+      <workItem from="1780633211494" duration="1419000" />
     </task>
     <servers />
   </component>

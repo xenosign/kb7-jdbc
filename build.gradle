@@ -17,15 +17,14 @@ dependencies {
     // MyBatis
     implementation 'org.mybatis:mybatis:3.5.16'
 
-
     // MySQL 접속용 라이브러리
     implementation 'com.mysql:mysql-connector-j:8.3.0'
 
     // MongoDB 드라이버
     implementation 'org.mongodb:mongodb-driver-sync:5.1.0'
-
     // SLF4J (MongoDB 로깅)
     implementation 'org.slf4j:slf4j-simple:2.0.13'
+
 
     // 롬복 관련 라이브러리
     compileOnly 'org.projectlombok:lombok:1.18.30'
