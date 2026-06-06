@@ -62,11 +62,11 @@ public class UserService {
         return result;
     }
 
-//    public List<User> searchByName(String name) {
-//        return userRepository.findAll().stream()
-//                .filter(user -> user.getName().contains(name))
-//                .collect(Collectors.toList());
-//    }
+    public List<User> searchByNameByDB(String name) {
+        return userRepository.findAll().stream()
+                .filter(user -> user.getName().contains(name))
+                .collect(Collectors.toList());
+    }
 
     // 3-2. 이름 LIKE 검색 (DB)
     public List<User> searchByNameLike(String name) {

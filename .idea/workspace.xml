@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="25805971-96b9-4723-8458-0dba155590ec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/MongoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/MongoConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/entity/UserPojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/entity/UserPojo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/repository/UserMongoPojoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/repository/UserMongoPojoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,8 +168,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.30387.90" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
       </set>
     </attachedChunks>
   </component>
@@ -197,6 +195,7 @@
       <workItem from="1780632992755" duration="98000" />
       <workItem from="1780633211494" duration="2739000" />
       <workItem from="1780638291549" duration="2872000" />
+      <workItem from="1780744800242" duration="51000" />
     </task>
     <servers />
   </component>
